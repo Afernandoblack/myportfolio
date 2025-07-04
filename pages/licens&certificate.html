@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 | Ashan Fernando Portfolio</title>
+    <link rel="icon" href="../images/icon.png" type="image/x-icon"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: radial-gradient(circle at 30% 30%, #1e2a36 0%, #232b36 60%, #1a232b 100%);
+            overflow-x: hidden;
+        }
+        .navbar-custom {
+            background: #23272f;
+            border-radius: 2rem;
+            margin: 1.5rem auto 2rem auto;
+            max-width: 900px;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.2);
+            padding: 0.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: box-shadow 0.2s;
+        }
+        .navbar-custom .nav-link {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin: 0 1.2rem;
+            position: relative;
+            transition: color 0.2s;
+        }
+        .navbar-custom .nav-link.active,
+        .navbar-custom .nav-link:hover {
+            color: #00ffc3;
+        }
+        .video-section {
+            background: #232b36;
+            border-radius: 1.2rem;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 700px;
+            color: #fff;
+        }
+        .video-section h2 {
+            color: #00ffc3;
+            margin-bottom: 1.2rem;
+        }
+        .video-section p {
+            color: #e0f7fa;
+        }
+        .video-section iframe {
+            width: 100%;
+            height: 380px;
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            border: none;
+        }
+        @media (max-width: 600px) {
+            .video-section iframe {
+                height: 220px;
+            }
+            .navbar-custom {
+                max-width: 100vw;
+                border-radius: 0;
+                margin: 0;
+            }
+        }
+        .light-mode {
+            background: #fff !important;
+            color: #23272f !important;
+        }
+        .light-mode .navbar-custom {
+            background: #fff !important;
+            color: #23272f !important;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+        }
+        .light-mode .navbar-custom .nav-link {
+            color: #23272f !important;
+        }
+        .light-mode .navbar-custom .nav-link.active,
+        .light-mode .navbar-custom .nav-link:hover {
+            color: #00bfae !important;
+        }
+        .light-mode .video-section {
+            background: #f7f7f7 !important;
+            color: #23272f !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar copied from index.html -->
+    <nav class="navbar navbar-expand-lg navbar-custom d-flex align-items-center justify-content-between">
+        <div class="container-fluid px-0">
+            <!-- Profile picture on the left -->
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../images/icon.png" alt="Profile" style="width:40px; height:40px; border-radius:50%; object-fit:cover; margin-right:10px;">
+                <span class="d-none d-lg-inline" style="font-weight:700; color:#00ffc3;">Ashan</span>
+            </a>
+            <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+                <ul class="navbar-nav flex-column flex-lg-row mx-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="licens&certificate.html">Licenses & Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Theme toggle icon (sun/moon clipart) -->
+            <span class="theme-toggle-icon ms-2" id="theme-toggle" title="Toggle light/dark mode" style="font-size:1.7rem; cursor:pointer;">
+                <img id="icon-moon" src="../images/moon.svg" alt="Moon" style="width:32px; height:32px; display:inline; vertical-align:middle;">
+                <img id="icon-sun" src="../images/sun.svg" alt="Sun" style="width:32px; height:32px; display:none; vertical-align:middle;">
+            </span>
+        </div>
+    </nav>
+
+    
+
+    <!-- Add these sections after your current video-section, before </body> -->
+    <section id="certificates" class="container my-5">
+        <div class="card bg-dark text-white" style="border-radius: 1.2rem; box-shadow: 0 4px 24px 0 rgba(0,0,0,0.3);">
+            <div class="card-body">
+                <h2 class="card-title" style="color:#00ffc3;">Certificates <img src="../images/certificate.gif" alt="Certificate Icon" style="width: 40px; height: 40px; vertical-align:middle;"></h2>
+                <div class="row g-3">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <a href="https://learn.nvidia.com/certificates?id=qeKYS2d1Q4mFe23r9ac_gg" target="_blank" style="text-decoration:none;">
+                            <img src="../Certificate/certficate1.JPG" alt="Certificate 1" class="img-fluid rounded mb-2" style="width:100%; object-fit:cover; cursor:pointer;">
+                            <p class="mb-0" style="color:#00ffc3; text-align: center;">Getting Started with Deep Learning</p>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <a href="https://www.coursera.org/account/accomplishments/verify/L6RHQETZW6RQ?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank" style="text-decoration:none;">
+                            <img src="../Certificate/certficate2.JPG" alt="Certificate 2" class="img-fluid rounded mb-2" style="width:100%; object-fit:cover; cursor:pointer;">
+                            <p class="mb-0" style="color:#00ffc3; text-align: center;">Introduction to Programming with MATLAB</p>
+                        </a>
+                    </div>
+                    <!-- Add more certificates as needed, using the same structure -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--<section id="licenses" class="container my-5">
+        <div class="card bg-dark text-white" style="border-radius: 1.2rem; box-shadow: 0 4px 24px 0 rgba(0,0,0,0.3);">
+            <div class="card-body">
+                <h2 class="card-title" style="color:#00ffc3;">Licenses</h2>
+                <div class="row g-3">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <img src="../images/license1.jpg" alt="License 1" class="img-fluid rounded mb-2" style="width:100%; object-fit:cover;">
+                        <p class="mb-0">License Title 1</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <img src="../images/license2.jpg" alt="License 2" class="img-fluid rounded mb-2" style="width:100%; object-fit:cover;">
+                        <p class="mb-0">License Title 2</p>
+                    </div>
+                    <!-- Add more licenses as needed -->
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Add this script before </body> to enable light/dark mode switching -->
+    <script>
+    // Theme toggle with localStorage and icon switch
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const iconMoon = document.getElementById('icon-moon');
+        const iconSun = document.getElementById('icon-sun');
+
+        function setTheme(mode) {
+            if (mode === 'light') {
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+                if (iconMoon) iconMoon.style.display = 'none';
+                if (iconSun) iconSun.style.display = 'inline';
+            } else {
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark');
+                if (iconMoon) iconMoon.style.display = 'inline';
+                if (iconSun) iconSun.style.display = 'none';
+            }
+        }
+
+        // Set theme on load
+        const savedTheme = localStorage.getItem('theme');
+        setTheme(savedTheme === 'light' ? 'light' : 'dark');
+
+        // Add click event only if themeToggle exists
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                setTheme(document.body.classList.contains('light-mode') ? 'dark' : 'light');
+            });
+        }
+    });
+    </script>
+</body>
+</html>
