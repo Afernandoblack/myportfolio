@@ -83,23 +83,23 @@
             font-size: 1.1rem;
         }
         .floating-icons {
-            position: fixed;
+            position: absolute;
             top: 0; left: 0; width: 100vw; height: 100vh;
             pointer-events: none;
             z-index: 0;
+            display: flex;
         }
         .floating-icons svg {
             position: absolute;
-            opacity: 0.18;
+            opacity: 1;
             filter: blur(0.5px);
-            animation: float-random 12s linear infinite;
+            animation: float 20s infinite ease-in-out;
+            display: flex;
         }
-        @keyframes float-random {
-            0%   { transform: translateY(0) translateX(0) scale(1) rotate(0deg);}
-            25%  { transform: translateY(-30px) translateX(20px) scale(1.1) rotate(10deg);}
-            50%  { transform: translateY(-60px) translateX(-20px) scale(1.05) rotate(-10deg);}
-            75%  { transform: translateY(-30px) translateX(10px) scale(1.12) rotate(5deg);}
-            100% { transform: translateY(0) translateX(0) scale(1) rotate(0deg);}
+        @keyframes float {
+            0% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+            100% { transform: translateY(0px) scale(1); }
         }
         @media (max-width: 900px) {
             .navbar-custom {
@@ -131,7 +131,7 @@
                 width: 60px !important;
                 height: 60px !important;
                 /* Enable animation on mobile */
-                animation: float-mobile 2.5s infinite alternate ease-in-out;
+                animation: float-mobile 1s infinite alternate ease-in-out;
                 box-shadow: 0 2px 8px 0 rgba(0,0,0,0.12);
             }
         }
@@ -228,29 +228,41 @@
     </nav>
 
         <div class="floating-icons">
-            <svg width="48" height="48" style="top: 18%; left: 60%; animation-delay: 0s;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 35%; left: 80%; animation-delay: 2s;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 55%; left: 70%; animation-delay: 4s;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 25%; left: 75%; animation-delay: 1s;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 60%; left: 85%; animation-delay: 3s;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 40%; left: 65%; animation-delay: 5s;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 70%; left: 80%; animation-delay: 6s;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 50%; left: 90%; animation-delay: 7s;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 65%; left: 60%; animation-delay: 8s;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 75%; left: 75%; animation-delay: 9s;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 80%; left: 90%; animation-delay: 10s;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 85%; left: 70%; animation-delay: 11s;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
-            <svg width="48" height="48" style="top: 90%; left: 80%; animation-delay: 12s;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 0%;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 5%;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 10%;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 15%;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 20%;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 25%;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 30%;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 35%;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 40%;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 45%;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 50%;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 55%;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 60%;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 65%;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 70%;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 75%;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 80%;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 85%;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 90%;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 95%;"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#00ffc3" stroke-width="2" fill="none"/></svg>
+            <svg width="48" height="48" style="top: 20%; left: 100%;"><circle cx="24" cy="24" r="20" stroke="#00ffc3" stroke-width="2" fill="none"/><circle cx="24" cy="24" r="6" stroke="#fff" stroke-width="2" fill="none"/></svg>  
         </div>
-    <h2 style="color:#00ffc3; text-align:center; margin-top:2rem; margin-bottom:1rem;">My Resume</h2>
+        <br>
+        <h2 style="color:#00ffc3; text-align:center; margin-top:2rem; margin-bottom:1rem;">My Resume</h2>
 
-    <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
-     padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-     border-radius: 8px; will-change: transform;">
-      <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-        src="https://www.canva.com/design/DAGrtMFzH_4/6zxxvgz1heXY1sZbRkVXNg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-      </iframe>
-    </div>
+    
+        <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 2px solid #00ffc3; padding: 0;margin:0;"
+    src="https://www.canva.com/design/DAGrtMFzH_4/6zxxvgz1heXY1sZbRkVXNg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGrtMFzH_4&#x2F;6zxxvgz1heXY1sZbRkVXNg&#x2F;view?utm_content=DAGrtMFzH_4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"><h8 style="color:#00ffc3; text-align:left; margin-top:2rem; margin-bottom:1rem;">Asha Fernando</h8></a>
+    
 
 
 
